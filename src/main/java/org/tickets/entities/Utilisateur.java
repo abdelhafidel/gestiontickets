@@ -1,17 +1,14 @@
 package org.tickets.entities;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "user_type", discriminatorType = DiscriminatorType.STRING)
 public class Utilisateur {
 
 	@Id
@@ -23,6 +20,11 @@ public class Utilisateur {
 	private String telephone;
 	private String login;
 	private String password;
+	
+	
+	
+	@OneToMany(mappedBy = "utilisateur")
+	private List<Ticket> tickets;
 
 	public Utilisateur(Long id_utilisateur, String nom, String prenom, String mail, String telephone, String login,
 			String password) {
@@ -95,5 +97,4 @@ public class Utilisateur {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }
