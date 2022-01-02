@@ -17,6 +17,10 @@ public class ManagerService {
 	public Manager save(Manager entity) {
 		return daoManager.save(entity);
 	}
+	
+	public Manager modify(Manager entity) {
+		return daoManager.save(entity);
+	}
 
 	public List<Manager> findAll() {
 		return daoManager.findAll();
@@ -30,9 +34,7 @@ public class ManagerService {
 		daoManager.deleteById(id);
 	}
 
-	public Manager getById(Long id) {
-		return daoManager.getById(id);
-	}
+	
 	
 	
 
