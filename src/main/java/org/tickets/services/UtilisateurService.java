@@ -16,6 +16,10 @@ public class UtilisateurService {
 	public Utilisateur save(final Utilisateur entity) {
 		return daoUtilisateur.save(entity);
 	}
+	
+	public Utilisateur modify(final Utilisateur entity) {
+		return daoUtilisateur.save(entity);
+	}
 
 	public List<Utilisateur> findAll() {
 		return daoUtilisateur.findAll();
