@@ -1,6 +1,7 @@
 package org.tickets.entities;
 
-import javax.persistence.Entity;
+
+import javax.persistence.Entity; 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +22,21 @@ public class Ticket {
     @JoinColumn(name = "id_domaine")
     private Domaine domaine;
     
+
+    @ManyToOne
+    @JoinColumn(name = "id_manager")
+    private Manager manager;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_employe")
+    private Employe employe;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_utilisateur")
+    private Utilisateur utilisateur;
+    
+
+
 	public Ticket() {
 		super();
 	}
@@ -90,11 +106,29 @@ public class Ticket {
 		this.domaine = domaine;
 	}
 
-	@Override
-	public String toString() {
-		return "Ticket [id=" + id + ", titre=" + titre + ", description=" + description + ", priorite=" + priorite
-				+ ", etat_ticket=" + etat_ticket + ", domaine=" + domaine + "]";
+	public Manager getManager() {
+		return manager;
 	}
-    
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public Employe getEmploye() {
+		return employe;
+	}
+
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
 
 }
