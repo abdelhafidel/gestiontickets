@@ -15,6 +15,9 @@ public class Domaine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    
+    private String libelle;
+    
     @OneToMany(mappedBy = "domaine")
     private List<Ticket> tickets;
 	
