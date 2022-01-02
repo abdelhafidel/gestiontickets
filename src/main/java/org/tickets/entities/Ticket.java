@@ -1,5 +1,6 @@
 package org.tickets.entities;
 
+
 import javax.persistence.Entity; 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class Ticket {
     @JoinColumn(name = "id_domaine")
     private Domaine domaine;
     
+
     @ManyToOne
     @JoinColumn(name = "id_manager")
     private Manager manager;
@@ -33,6 +35,7 @@ public class Ticket {
     @JoinColumn(name = "id_utilisateur")
     private Utilisateur utilisateur;
     
+
 
 	public Ticket() {
 		super();
@@ -127,6 +130,5 @@ public class Ticket {
 		this.utilisateur = utilisateur;
 	}
 
-	
 
 }
