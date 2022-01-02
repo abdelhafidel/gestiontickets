@@ -17,6 +17,10 @@ public class EmployeService {
 		return daoEmploye.save(entity);
 	}
 
+	public Employe modify(Employe entity) {
+		return daoEmploye.save(entity);
+	}
+
 	public Employe findById(Long id) {
 		return daoEmploye.findById(id).get();
 	}
@@ -32,6 +36,5 @@ public class EmployeService {
 	public List<Employe> findAll() {
 		return daoEmploye.findAll();
 	}
-	
-	
+
 }

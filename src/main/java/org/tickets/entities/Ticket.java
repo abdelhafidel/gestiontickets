@@ -16,7 +16,9 @@ public class Ticket {
     private String titre;
     private String description;
     private String priorite;
-    private Boolean etat_ticket;
+    private String etat_ticket;
+    
+    
     @ManyToOne
     @JoinColumn(name = "id_domaine")
     private Domaine domaine;
@@ -38,7 +40,7 @@ public class Ticket {
 		super();
 	}
 
-	public Ticket(Long id, String titre, String description, String priorite, Boolean etat_ticket) {
+	public Ticket(Long id, String titre, String description, String priorite, String etat_ticket) {
 		super();
 		this.id = id;
 		this.titre = titre;
@@ -47,7 +49,7 @@ public class Ticket {
 		this.etat_ticket = etat_ticket;
 	}
 
-	public Ticket(String titre, String description, String priorite, Boolean etat_ticket) {
+	public Ticket(String titre, String description, String priorite, String etat_ticket) {
 		super();
 		this.titre = titre;
 		this.description = description;
@@ -87,11 +89,11 @@ public class Ticket {
 		this.priorite = priorite;
 	}
 
-	public Boolean getEtat_ticket() {
+	public String getEtat_ticket() {
 		return etat_ticket;
 	}
 
-	public void setEtat_ticket(Boolean etat_ticket) {
+	public void setEtat_ticket(String etat_ticket) {
 		this.etat_ticket = etat_ticket;
 	}
 
