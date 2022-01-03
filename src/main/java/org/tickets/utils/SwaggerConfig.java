@@ -40,7 +40,7 @@ public class SwaggerConfig {
 	}
 
 	public ApiInfo getApiInfo() {
-		return new ApiInfoBuilder().title("generated").version("2.0").description("generated ").license("he").build();
+		return new ApiInfoBuilder().title("Apis gestion de tickets").version("2.0").description("generated ").license("he").build();
 
 	}
 
