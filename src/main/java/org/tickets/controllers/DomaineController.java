@@ -17,44 +17,45 @@ import io.swagger.annotations.ApiOperation;
 
 
 @RestController
-@RequestMapping("gestionTickets/domaine")
+@RequestMapping("/domaine")
 public class DomaineController {
 	
 	@Autowired
 	private DomaineService domaineService;
 
 	@ApiOperation("add domaine")
-    @PostMapping("/addDomaine")
+    @PostMapping(path = "/addDomaine")
     public Domaine save(Domaine entity) {
 		return domaineService.save(entity);
 	}
 	
 	@ApiOperation("update domaine")
-    @PutMapping("/updateDomaine")
+    @PutMapping(path = "/mdfDomaine")
     public Domaine update(Domaine entity) {
 		return domaineService.save(entity);
 	}
 
     @ApiOperation("List of domaines")
-    @GetMapping("/listDomaine")
+    @GetMapping(path = "/getDomaine")
 	public List<Domaine> findAll() {
 		return domaineService.findAll();
 	}
 
     @ApiOperation("Find domaine")
-    @GetMapping("idDom/{id}")
+    @GetMapping(path = "/getDomaine/{id}")
 	public Domaine findById(@PathVariable Long id) {
 		return domaineService.findById(id);
 	}
+    
+    @GetMapping(path = "/chickDomaine/{id}")
+	public boolean existsById(@PathVariable Long id) {
+		return domaineService.existsById(id);
+	}
 	
 	@ApiOperation("delete domaine")
-	@DeleteMapping("idDomaine/{id}")
+	@DeleteMapping(path = "/deleteDomaine/{id}")
 	public void deleteById(@PathVariable Long id) {
 		domaineService.deleteById(id);
-	}
-
-	public Domaine getById(Long id) {
-		return domaineService.getById(id);
 	}
 	
 
