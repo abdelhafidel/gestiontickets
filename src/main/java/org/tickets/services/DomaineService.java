@@ -30,10 +30,9 @@ public class DomaineService {
 		daoDomain.deleteById(id);
 	}
 
-	public Domaine getById(Long id) {
-		return daoDomain.getById(id);
+	public boolean existsById(Long id) {
+		return daoDomain.existsById(id);
 	}
-	
 	
 
 	
