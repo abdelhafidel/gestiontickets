@@ -18,12 +18,7 @@ public class Ticket {
     private String description;
     private String priorite;
     private String etat_ticket;
-    
-    
-    @ManyToOne
-    @JoinColumn(name = "id_domaine")
-    private Domaine domaine;
-    
+   
 
     @ManyToOne
     @JoinColumn(name = "id_manager")
@@ -37,7 +32,10 @@ public class Ticket {
     @JoinColumn(name = "id_utilisateur")
     private Utilisateur utilisateur;
     
-
+    @ManyToOne
+    @JoinColumn(name = "id_domaine")
+    private Domaine domaine;
+    
 
 	public Ticket() {
 		super();

@@ -16,42 +16,43 @@ import org.tickets.services.TicketService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("gestionTickets/ticket")
+@RequestMapping("/ticket")
 public class TicketController {
 	
 	@Autowired
 	private TicketService ticketService;
 
 	@ApiOperation("add ticket")
-    @PostMapping("/addticket")
+    @PostMapping(path = "/addTicket")
 	public Ticket save(Ticket entity) {
 		return ticketService.save(entity);
 	}
 	
 	@ApiOperation("update ticket")
-    @PutMapping("/updateTicket")
+    @PutMapping(path = "/mdfTicket")
     public Ticket update(Ticket entity) {
 		return ticketService.save(entity);
 	}
 
 	@ApiOperation("List of tickets")
-    @GetMapping("/list")
+    @GetMapping(path = "/getTicket")
 	public List<Ticket> findAll() {
 		return ticketService.findAll();
 	}
 
 	@ApiOperation("Find tickets")
-	@GetMapping("id/{id}")
+	@GetMapping(path = "/getTicket/{id}")
 	public Ticket findById(@PathVariable Long id) {
 		return ticketService.findById(id);
 	}
 
-	public boolean existsById(Long id) {
+	@GetMapping(path = "/chickTicket/{id}")
+	public boolean existsById(@PathVariable Long id) {
 		return ticketService.existsById(id);
 	}
 	
 	@ApiOperation("delete ticket")
-	@DeleteMapping("idTicket/{id}")
+	@DeleteMapping(path = "/deleteTicket/{id}")
 	public void deleteById(@PathVariable Long id) {
 		ticketService.deleteById(id);
 	}
