@@ -1,6 +1,6 @@
 package org.tickets.entities;
 
-import java.util.List;
+import java.util.List; 
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +37,12 @@ public class Employe {
 		this.login = login;
 		this.password = password;
 	}
+
+	public Employe() {
+		super();
+	}
+
+
 
 	public Long getId_employe() {
 		return id_employe;

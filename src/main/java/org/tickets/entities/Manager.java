@@ -22,8 +22,12 @@ public class Manager{
 	private String password;
 	private String departement;
 	private String codeService;
-
-
+	@OneToMany(mappedBy = "manager")
+	private List<Ticket> tickets;
+	
+	public Manager() {
+		super();
+	}
 
 	public Manager(Long id_manager, String nom, String prenom, String mail, String telephone, String login,
 			String password, String departement, String codeService) {
@@ -37,8 +41,6 @@ public class Manager{
 		this.password = password;
 	}
 	
-	@OneToMany(mappedBy = "manager")
-	private List<Ticket> tickets;
 	
 	public Long getId_manager() {
 		return id_manager;
