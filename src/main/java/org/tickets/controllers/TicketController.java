@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.tickets.entities.Ticket;
+import org.tickets.entities.Utilisateur;
 import org.tickets.services.TicketService;
 
 import io.swagger.annotations.ApiOperation;
@@ -24,23 +26,23 @@ public class TicketController {
 
 	@ApiOperation("add ticket")
     @PostMapping(path = "/addTicket")
-	public Ticket save(Ticket entity) {
+	public Ticket save(@RequestBody Ticket entity) {
 		return ticketService.save(entity);
 	}
 	
 	@ApiOperation("update ticket")
-    @PutMapping(path = "/mdfTicket")
-    public Ticket update(Ticket entity) {
+	@PutMapping(path = "/mdfTicket")
+	public Ticket modify(@RequestBody Ticket entity) {
 		return ticketService.save(entity);
 	}
 
 	@ApiOperation("List of tickets")
-    @GetMapping(path = "/getTicket")
+    @GetMapping(path = "/getTickets")
 	public List<Ticket> findAll() {
 		return ticketService.findAll();
 	}
 
-	@ApiOperation("Find tickets")
+	@ApiOperation("Find ticket")
 	@GetMapping(path = "/getTicket/{id}")
 	public Ticket findById(@PathVariable Long id) {
 		return ticketService.findById(id);

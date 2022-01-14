@@ -36,7 +36,7 @@ public class DomaineController {
 	}
 
     @ApiOperation("List of domaines")
-    @GetMapping(path = "/getDomaine")
+    @GetMapping(path = "/getDomaines")
 	public List<Domaine> findAll() {
 		return domaineService.findAll();
 	}

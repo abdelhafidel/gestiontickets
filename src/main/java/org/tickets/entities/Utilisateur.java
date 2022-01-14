@@ -20,9 +20,6 @@ public class Utilisateur {
 	private String telephone;
 	private String login;
 	private String password;
-	
-	
-	
 	@OneToMany(mappedBy = "utilisateur")
 	private List<Ticket> tickets;
 
